@@ -5,46 +5,40 @@
 class Gosnake < Formula
   desc ""
   homepage "https://github.com/streamdp/homebrew-games"
-  version "1.0.7"
+  version "1.1.0"
 
   on_macos do
-    on_intel do
-      url "https://github.com/streamdp/gosnake/releases/download/v1.0.7/gosnake_Darwin_x86_64.tar.gz"
-      sha256 "a7d8d3c5f71a6d80ea942158373e647bfc8aade62fdc485ebcea2a7fbdf36f2d"
+    if Hardware::CPU.intel?
+      url "https://github.com/streamdp/gosnake/releases/download/v1.1.0/gosnake_Darwin_x86_64.tar.gz"
+      sha256 "00a0ee22b88a2fd8d5d05c8ab1af9a3ae08c7e3c7272f75cea3bc4fda026e024"
 
-      def install
+      define_method(:install) do
         bin.install "gosnake"
       end
     end
-    on_arm do
-      url "https://github.com/streamdp/gosnake/releases/download/v1.0.7/gosnake_Darwin_arm64.tar.gz"
-      sha256 "89120d1f66c4918481fa678097e25eacf751505cb8a73765b68760e621c41aeb"
+    if Hardware::CPU.arm?
+      url "https://github.com/streamdp/gosnake/releases/download/v1.1.0/gosnake_Darwin_arm64.tar.gz"
+      sha256 "890697c6620c2c07a8bbbecae9f8e3656d25d92b7d89b59350dcd911d3acc9d0"
 
-      def install
+      define_method(:install) do
         bin.install "gosnake"
       end
     end
   end
 
   on_linux do
-    on_intel do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/streamdp/gosnake/releases/download/v1.0.7/gosnake_Linux_x86_64.tar.gz"
-        sha256 "8c0361062684391de1af5fe0021cc30f7ea37f0c7ddb83a1c1e3c52807150b33"
-
-        def install
-          bin.install "gosnake"
-        end
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/streamdp/gosnake/releases/download/v1.1.0/gosnake_Linux_x86_64.tar.gz"
+      sha256 "684113714c9a6b50af8c18bfc07070f90d958aa05696c4a5e45cb30cfa819668"
+      define_method(:install) do
+        bin.install "gosnake"
       end
     end
-    on_arm do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/streamdp/gosnake/releases/download/v1.0.7/gosnake_Linux_arm64.tar.gz"
-        sha256 "d0f90e244c854c5b9b6a2679cf5a8135fc1406be3493ac8c27f5f113f78ba004"
-
-        def install
-          bin.install "gosnake"
-        end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/streamdp/gosnake/releases/download/v1.1.0/gosnake_Linux_arm64.tar.gz"
+      sha256 "2a195827dd04b5012b1d6570dfd51b69e722676d8d77eab1296e90db38df1fe7"
+      define_method(:install) do
+        bin.install "gosnake"
       end
     end
   end
