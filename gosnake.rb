@@ -5,20 +5,20 @@
 class Gosnake < Formula
   desc ""
   homepage "https://github.com/streamdp/homebrew-games"
-  version "1.1.1"
+  version "1.1.2"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/streamdp/gosnake/releases/download/v1.1.1/gosnake_Darwin_x86_64.tar.gz"
-      sha256 "870e599be2a879cd55c5a21f3cd426c1cf5c24f65445a7a9e5611b223f500afa"
+      url "https://github.com/streamdp/gosnake/releases/download/v1.1.2/gosnake_Darwin_x86_64.tar.gz"
+      sha256 "278c58d799f4f934013c72e76971305f9d6026b14de9488d7c5b2fb34d93d6e1"
 
       define_method(:install) do
         bin.install "gosnake"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/streamdp/gosnake/releases/download/v1.1.1/gosnake_Darwin_arm64.tar.gz"
-      sha256 "55766515d6e16afce4b1ebedeb93d20381d38c0bce818e188659b2f8fed847c3"
+      url "https://github.com/streamdp/gosnake/releases/download/v1.1.2/gosnake_Darwin_arm64.tar.gz"
+      sha256 "34e7a41ee59afe8ec5ac0807e994412d7da1a469dff0a4f7bb313970ef5e0b8d"
 
       define_method(:install) do
         bin.install "gosnake"
@@ -28,15 +28,15 @@ class Gosnake < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/streamdp/gosnake/releases/download/v1.1.1/gosnake_Linux_x86_64.tar.gz"
-      sha256 "eed5be9769bcd777eaef43306a2127d8f8ab6e7ce94d45c71fbb0f2c779ad47f"
+      url "https://github.com/streamdp/gosnake/releases/download/v1.1.2/gosnake_Linux_x86_64.tar.gz"
+      sha256 "bffc87e30ff81abb3e878ab79259e1b9fb4490b70c8be59438df679d3e68f37a"
       define_method(:install) do
         bin.install "gosnake"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/streamdp/gosnake/releases/download/v1.1.1/gosnake_Linux_arm64.tar.gz"
-      sha256 "edad60b9ddab8df7b7e30d546f7a4bad74d57e279adfd38ab818a78c2c2f3977"
+      url "https://github.com/streamdp/gosnake/releases/download/v1.1.2/gosnake_Linux_arm64.tar.gz"
+      sha256 "fcdff292b856041762d9b735368fbeb1c699d5bb6ef0304519a51c42eb4b8f5b"
       define_method(:install) do
         bin.install "gosnake"
       end
