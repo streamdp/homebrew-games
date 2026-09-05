@@ -10,7 +10,7 @@ class Gosnake < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/streamdp/gosnake/releases/download/v1.1.7/gosnake_Darwin_x86_64.tar.gz"
-      sha256 "2f656b1f8193b21927722489789e852b49e9a9c8a63cf44223870dd6e9078b8d"
+      sha256 "05a8ef69810deb6601002c1d867a156a145d73b8338ce9206866c5ecaa9b01cc"
 
       define_method(:install) do
         bin.install "gosnake"
@@ -18,7 +18,7 @@ class Gosnake < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/streamdp/gosnake/releases/download/v1.1.7/gosnake_Darwin_arm64.tar.gz"
-      sha256 "0e918214aa547fbf7d7beb8b9ccfa5b571d8a6b9ae82c98799f40ef5c4b258f5"
+      sha256 "acd9ba03fefdfb1e7e2716630bcf00e93cf8f9a228ba9ee5ec0a6c794dd6f1f1"
 
       define_method(:install) do
         bin.install "gosnake"
@@ -29,14 +29,14 @@ class Gosnake < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/streamdp/gosnake/releases/download/v1.1.7/gosnake_Linux_x86_64.tar.gz"
-      sha256 "9e52e4bafab05a5e1344781e5a6333dce7ad43e1a0e5428ae88a7f69b665b78a"
+      sha256 "f7ab4cfd099be4e6c0bf598199a79bc634e930635e503a1068fce8d285172fbf"
       define_method(:install) do
         bin.install "gosnake"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/streamdp/gosnake/releases/download/v1.1.7/gosnake_Linux_arm64.tar.gz"
-      sha256 "1526d48afa7986fc2e489264691b17573affd8a5896d68891843d7e40a1c8270"
+      sha256 "2341f081a622f0918a16d1601c34cc72f1cf589e7424f4cd4f987b1e91363d81"
       define_method(:install) do
         bin.install "gosnake"
       end
